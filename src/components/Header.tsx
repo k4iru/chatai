@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Avatar from './Avatar';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 
 function Header() {
   return (
@@ -11,6 +12,14 @@ function Header() {
           <h1>ChatAI</h1>
         </div>
       </Link>
+      <div>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+      </div>
     </header>
   );
 }
